@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,300&family=Poppins:wght@400;600&family=Roboto+Mono:wght@400;600&family=Square+Peg&display=swap');
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
 }
 
 body {
-    background-color: rgb(14, 14, 14);
+    background-color: rgb(24, 24, 24);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
