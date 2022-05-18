@@ -18,9 +18,40 @@ class Matrix {
     randomize() {
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
-                this.data[i][j] = Math.floor(Math.random() * 10)
+                this.data[i][j] = Math.floor(Math.random() * 2 - 1)
             }
         }
+    }
+
+    static fromArray(arr) {
+        let resultingMatrix = new Matrix(arr.length, 1)
+        for (let i = 0; i < resultingMatrix.rows; i++) {
+            resultingMatrix.data[i] = []
+            for (let j = 0; j < resultingMatrix.cols; j++) {
+                resultingMatrix.data[i][j] = arr[i]
+            }
+        }
+        return resultingMatrix
+    }
+
+    toArray() {
+        let res = []
+        this.map(elt => res.push(elt))
+        return res
+    }
+
+    static subtract(a, b) {
+        if (a.rows != b.rows || a.cols != b.cols) {
+            console.log('Error subtract operation')
+            return -1
+        }
+        let resultingMatrix = new Matrix(a.rows, a.cols)
+        for (let i = 0; i < resultingMatrix.rows; i++) {
+            for (let j = 0; j < resultingMatrix.cols; j++) {
+                resultingMatrix.data[i][j] = a.data[i][j] - b.data[i][j]
+            }
+        }
+        return resultingMatrix
     }
 
     add(m) {

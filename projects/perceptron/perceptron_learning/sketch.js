@@ -16,10 +16,6 @@ let brain = new Perceptron();
 
 function setup() {
   createCanvas(window.innerHeight * 0.8, window.innerHeight * 0.8);
-  // for (let i = 0; i < 300; i++) {
-  //   let newPoint = new Point();
-  //   points.push(newPoint);
-  // }
   let change = createButton("switch label");
   change.elt.onclick = () => {
     label = label == 1 ? -1 : 1;
@@ -28,6 +24,22 @@ function setup() {
   trainBtn.elt.onclick = () => {
     training = true;
   };
+  // for (let i = 0; i < 300; i++) {
+  //   let x = randomVal(-xRange, xRange)
+  //   let y = randomVal(-yRange, yRange)
+
+  //   const m = 5
+  //   const c = -120
+  //   let what = m * x + c
+  //   if (y > what) {
+  //     label = 1
+  //   }
+  //   else {
+  //     label = -1
+  //   }
+  //   points.push(new Point(x, y))
+  // }
+  // frameRate(20)
 }
 
 function mousePressed() {
@@ -57,11 +69,11 @@ function draw() {
   //   }
   // }
   if (training) {
-    for (let i = 0; i < 10000; i++) {
-      for (let point of points) {
-        brain.train(point);
-      }
+    // for (let i = 0; i < 10000; i++) {
+    for (let point of points) {
+      brain.train(point);
     }
+    // }
     Point.updateCorrectness();
   }
 
