@@ -24,22 +24,22 @@ function setup() {
   trainBtn.elt.onclick = () => {
     training = true;
   };
-  // for (let i = 0; i < 300; i++) {
-  //   let x = randomVal(-xRange, xRange)
-  //   let y = randomVal(-yRange, yRange)
+  for (let i = 0; i < 300; i++) {
+    let x = randomVal(-xRange, xRange)
+    let y = randomVal(-yRange, yRange)
 
-  //   const m = 5
-  //   const c = -120
-  //   let what = m * x + c
-  //   if (y > what) {
-  //     label = 1
-  //   }
-  //   else {
-  //     label = -1
-  //   }
-  //   points.push(new Point(x, y))
-  // }
-  // frameRate(20)
+    const m = 1
+    const c = 0
+    let what = m * x + c
+    if (y > what) {
+      label = 1
+    }
+    else {
+      label = -1
+    }
+    points.push(new Point(x, y))
+  }
+  frameRate(20)
 }
 
 function mousePressed() {
